@@ -5,7 +5,7 @@
 		<groupId>idv.shawnyang</groupId>
 		<artifactId>poc-reactor</artifactId>
 		<version>0.0.2-SNAPSHOT</version>
-		<relativePath>../</relativePath>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>notes-on-reactive-programming</artifactId>
 	<packaging>jar</packaging>
