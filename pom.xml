@@ -6,9 +6,8 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.10.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	
 	<groupId>idv.shawnyang</groupId>
 	<artifactId>poc-reactor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -17,7 +16,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-        <project.scm.id>github</project.scm.id>		
+		<project.scm.id>github</project.scm.id>
 		<nexusproxy>http://10.120.137.45:18081/nexus</nexusproxy>
 		<repobasepath>content/repositories</repobasepath>
 	</properties>
@@ -27,40 +26,21 @@
 	</scm>
 	<repositories>
 		<repository>
-			<id>sonatype-nexus-public-by-profile</id>			
+			<id>sonatype-nexus-public</id>
 			<url>${nexusproxy}/content/groups/public</url>
 		</repository>
-		<repository>
-			<id>sonatype-nexus-public</id>
-			<url>http://10.120.137.129:18081/nexus/content/groups/public/</url>
-		</repository>
 	</repositories>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>sonatype-nexus-release</id>
 			<url>${nexusproxy}/${repobasepath}/releases</url>
 		</repository>
-	     <snapshotRepository>
+		<snapshotRepository>
 			<id>sonatype-nexus-snapshot</id>
 			<url>${nexusproxy}/${repobasepath}/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
-	<profiles>
-		<profile>
-			<id>repo-official</id>
-			<activation>
-				<property>
-					<name>repo</name>
-					<value>official</value>
-				</property>
-			</activation>
-			<properties>
-				<nexusproxy>http://10.120.137.129:18081/nexus</nexusproxy>
-			</properties>
-		</profile>
-	</profiles>
 	<build>
 		<plugins>
 			<plugin>
@@ -77,9 +57,9 @@
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
-			</plugin>			
+			</plugin>
 		</plugins>
-	</build>		
+	</build>
 	<modules>
 		<module>notes-on-reactive-programming</module>
 	</modules>
